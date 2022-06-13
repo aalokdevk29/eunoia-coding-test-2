@@ -1,0 +1,8 @@
+<div class="page-project" id="homepage" v-show="isCurrent" >
+    <div class="project-header">
+        <span class="back-button" @click="goBack()">Back</span>
+    </div>
+    <div class="project-container" v-if="username">
+        <p>Hi, {{ username }}. Welcome to our page.</p>
+    </div>
+</div>

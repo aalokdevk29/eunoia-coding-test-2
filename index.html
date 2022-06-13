@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Test</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="./css/main.css"/>
+        <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+
+        <script src="js/plugins/jquery.min.js"></script>
+        <script src="js/plugins/bootstrap.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+        <script src="js/internal.js"></script>
+        <script>
+            $(document).ready(function () {
+                include("homepage");
+                include("loginpage");
+                asyncForEach(pageNames,
+                function (name, next) {
+                    preload(name + ".html", next);
+                },
+                function () {
+                    pageList = pageNames.map(function (name) {
+                        return eval(name + "Init()");
+                    });
+                    showPage("loginpage");
+                });
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

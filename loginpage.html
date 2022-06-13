@@ -1,0 +1,14 @@
+<div class="page-login" id="loginpage" v-show="isCurrent">
+	<div class="field-container">
+		<span>Email Address:</span>
+		<br/>
+		<input type="text" v-model="email" ref="email">
+		<br/>
+		<br/>
+		<span>Password:</span>
+		<br/>
+		<input type="password" v-model="password" ref="password">
+		<br/>
+		<button class="login-button" type="button" @click="submit()">Login</button>
+	</div>
+</div>
